@@ -1,6 +1,6 @@
 FROM openjdk:8-jre-alpine3.9
 
-ENV SCALA_VERSION=2.12.8
+ENV SCALA_VERSION=2.12.7
 ENV SBT_VERSION=1.2.8
 ENV SCALA_HOME=/usr/share/scala
 
