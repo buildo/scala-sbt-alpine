@@ -28,5 +28,7 @@ RUN \
   apk del .build-dependencies && \
   rm -rf "/tmp/"*
 
+WORKDIR /root
+
 RUN \
   sbt sbtVersion
