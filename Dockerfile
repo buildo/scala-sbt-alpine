@@ -1,7 +1,7 @@
 FROM openjdk:8-jre-alpine3.9
 
-ENV SCALA_VERSION=2.12.11
-ENV SBT_VERSION=1.3.9
+ARG SCALA_VERSION=2.12.11
+ARG SBT_VERSION=1.3.9
 ENV SCALA_HOME=/usr/share/scala
 
 RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
