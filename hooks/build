@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+IFS='_' read BASE_IMAGE SCALA_VERSION SBT_VERSION <<<"$DOCKER_TAG"
+
+if [ -n "$BASE_IMAGE" ] && [ -n "$SCALA_VERSION" ] && [ -n "$SBT_VERSION" ]
+then
+  docker build --build-arg SCALA_VERSION=$SCALA_VERSION --build-arg SBT_VERSION=$SBT_VERSION -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+else
+  docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+fi

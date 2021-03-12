@@ -1,7 +1,7 @@
-FROM openjdk:8-jre-alpine3.9
+FROM openjdk:8-jre-alpine@sha256:f362b165b870ef129cbe730f29065ff37399c0aa8bcab3e44b51c302938c9193
 
-ENV SCALA_VERSION=2.12.11
-ENV SBT_VERSION=1.3.9
+ARG SCALA_VERSION=2.12.11
+ARG SBT_VERSION=1.3.9
 ENV SCALA_HOME=/usr/share/scala
 
 RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
@@ -27,6 +27,8 @@ RUN \
   ln -s /usr/local/sbt/bin/* /usr/local/bin/ && \
   apk del .build-dependencies && \
   rm -rf "/tmp/"*
+
+WORKDIR /root
 
 RUN \
   sbt sbtVersion
