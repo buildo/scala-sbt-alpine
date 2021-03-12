@@ -28,7 +28,8 @@ RUN \
   apk del .build-dependencies && \
   rm -rf "/tmp/"*
 
-WORKDIR /root
-
 RUN \
-  sbt sbtVersion
+  sbt -Dsbt.rootdir=true -batch sbtVersion && \
+  rm -rf project target
+
+WORKDIR /root
