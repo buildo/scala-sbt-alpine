@@ -1,7 +1,7 @@
-FROM openjdk:8-jre-alpine@sha256:f362b165b870ef129cbe730f29065ff37399c0aa8bcab3e44b51c302938c9193
+FROM eclipse-temurin:17.0.6_10-jre-alpine@sha256:e7b28b772a5aaa0dc759c540ffcf1670765c1ae0245d41d9995db8a3a6115bd7
 
-ARG SCALA_VERSION=2.12.11
-ARG SBT_VERSION=1.3.9
+ARG SCALA_VERSION=2.12.17
+ARG SBT_VERSION=1.3.13
 ENV SCALA_HOME=/usr/share/scala
 
 RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
