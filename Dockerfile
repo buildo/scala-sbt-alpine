@@ -1,7 +1,7 @@
 FROM eclipse-temurin:17.0.6_10-jre-alpine@sha256:e7b28b772a5aaa0dc759c540ffcf1670765c1ae0245d41d9995db8a3a6115bd7
 
 ARG SCALA_VERSION=2.12.17
-ARG SBT_VERSION=1.3.13
+ARG SBT_VERSION=1.8.2
 ENV SCALA_HOME=/usr/share/scala
 
 RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
