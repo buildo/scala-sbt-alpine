@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17.0.6_10-jre-alpine@sha256:e7b28b772a5aaa0dc759c540ffcf1670765c1ae0245d41d9995db8a3a6115bd7
+FROM eclipse-temurin:17.0.7_7-jre-alpine@sha256:7cbe01fd3d515407f1fda1e68068831aa6ae4b6930d76cdaa43736dc810bbd1b7
 
 ARG SCALA_VERSION=2.12.17
 ARG SBT_VERSION=1.8.2
