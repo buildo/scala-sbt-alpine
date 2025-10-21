@@ -1,7 +1,7 @@
 FROM eclipse-temurin:17.0.9_9-jre-alpine@sha256:cba04f7101096852719a1530feffbb04a232765a8180b083f6182bafc6b3e1d3
 
 ARG SCALA_VERSION=2.13.12
-ARG SBT_VERSION=1.9.8
+ARG SBT_VERSION=1.11.7
 ENV SCALA_HOME=/usr/share/scala
 
 RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
@@ -29,7 +29,7 @@ RUN \
   rm -rf "/tmp/"*
 
 RUN \
-  sbt -Dsbt.rootdir=true -batch sbtVersion && \
+  sbt -Dsbt.rootdir=true -batch --allow-empty sbtVersion && \
   rm -rf project target
 
 WORKDIR /root
